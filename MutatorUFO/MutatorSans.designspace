@@ -160,26 +160,5 @@
       <info/>
     </instance>
   </instances>
-  <lib>
-    <dict>
-      <key>com.letterror.skateboard.interactionSources</key>
-      <dict>
-        <key>horizontal</key>
-        <array/>
-        <key>ignore</key>
-        <array/>
-        <key>vertical</key>
-        <array/>
-      </dict>
-      <key>com.letterror.skateboard.previewLocation</key>
-      <dict>
-        <key>Weight</key>
-        <real>760.0</real>
-        <key>Width</key>
-        <real>50.0</real>
-      </dict>
-      <key>com.letterror.skateboard.previewText</key>
-      <string>SKATE</string>
-    </dict>
-  </lib>
+
 </designspace>
