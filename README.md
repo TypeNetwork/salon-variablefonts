@@ -39,9 +39,113 @@ $ bash buildMutatorSans.sh
 
 This example uses [Glyphs 3](http://glyphsapp.com). They can be exported using `File > Export` in Glyphs.
 
-Glyphs files can also be exported using fontmake, though not all features may apply.
+It is also possible to export Glyphs files with fontmake using `-g`, but not all features may apply.
 
 ```
 $ fontmake -o variable -g MutatorSans.glyphs -f -i
 ```
 
+## AVAR / Axis Mapping
+
+This technique allows you to map internal coordinates to external coordinates. This means you can use 0-1000 or stem weights or whatever your preferred values are inside the font, and still offer users axis locations that are more in-line with their expectations or the spec.
+
+This is also an easy way to “warp” axes like `opsz` so that the rate of interpolation varies is not linear. (Not that this is different than [HOI](http://underware.nl/case-studies/hoi/) which is more advanced).
+
+### UFO
+
+In a designspace, these can be added `<map>` tags to an `<axis>`. Note that this involves changing a self-closing `<axis .../>` tag to an open/close pair `<axis>...</axis>`. 
+
+```
+    <axis tag="wght" name="Weight" minimum="100" maximum="900" default="100">
+      <map input="100" output="1"/>
+      <map input="400" output="440"/>
+      <map input="700" output="760"/>
+      <map input="900" output="1000"/>
+    </axis>
+```
+
+### Glyphs
+
+In a Glyphs file, you can set the `Axis Location` custom parameter for “Masters” and “Exports” to set the external user coordinates. [More info](https://glyphsapp.com/learn/creating-a-variable-font#g-axis-mappings).
+
+![axis location](assets/glyphs-axis-location.png)
+
+Glyphs also offers a font-level `Axis Mappings` custom parameter, but as of this writing this does not appear to be fully functional in exported variable fonts.
+
+
+## Intermediate layers / Supports
+
+In instances where only a few glyphs need retouching, it doesn’t make sense to add a whole new “Source” or “Master”. Instead you can add an Intermediate Layer or Support to add additional control to an interpolation.
+
+### UFO
+
+Not shown in this demo yet, but possible with [Skateboard “supports”](https://superpolator.com/skateboard.html).
+
+### Glyphs
+
+In the Glyphs examples, the horizontals of `B`, `E`, `F`, and `G` have intermediate layers (aka brace layers). [More info.](https://glyphsapp.com/learn/additional-masters-for-individual-glyphs-the-brace-trick)
+
+![intermediate layer](assets/glyphs-intermediate-layer.png)
+
+
+## Feature variations / Alternate layers
+
+Feature variations allow glyphs to swap to an alternate at certain points in the designspace. They typically use the OpenType features `rvrn` or `rlig` in the final font, but can be expressed differently in the source files.
+
+In these examples, `I` and `J` are substituted with alternate glyphs which are narrower.
+
+### UFO
+
+For UFOs, this be done using in a designspace using [rules](https://fonttools.readthedocs.io/en/latest/designspaceLib/readme.html#rules-element)
+
+```
+<rules>
+    <rule name="narrow_letters">
+      <conditionset>
+        <condition name="Width" minimum="50" maximum="75"/>
+        <condition name="Weight" minimum="1" maximum="900"/>
+      </conditionset>
+      <sub name="I" with="I.narrow"/>
+      <sub name="J" with="J.narrow"/>
+    </rule>
+</rules>
+```
+
+### Glyphs
+
+In Glyphs 3, this can be accomplished in one of two ways:
+
+#### “Alternate Layer” (aka bracket layer)
+
+In `MutatorSans-TrickLayers.glyphs`, you can see these layers for `I`, `J`, and `S`. Double click on the layer to change the location of the swap; right click on layer to change layer type.
+
+![alternate layer](assets/glyphs-alternate-layer.png)
+
+#### Feature condition
+
+In `MutatorSans.glyphs`, the alternates are stored as separate glyphs (`I.narrow`, `J.narrow` `S.closed`). In the OpenType features, the `rvrn` or `rlig` OpenType feature is added with conditions.
+
+```
+#ifdef VARIABLE
+condition 50 < wdth < 75;
+sub I by I.narrow;
+sub J by J.narrow;
+#endif
+```
+
+As of this writing, this is a Glyphs 3-specific technique and it only works when exporting directly from Glyphs (not through fontmake).
+
+
+
+[More info on these approaches.](https://glyphsapp.com/learn/switching-shapes)
+
+Either approach works! DJR finds it less confusing to work with feature variations as separate glyphs, rather than as layers.
+
+
+## Italic / Slant
+
+Demo coming soon.
+
+## Statmake
+
+Demo coming soon.
