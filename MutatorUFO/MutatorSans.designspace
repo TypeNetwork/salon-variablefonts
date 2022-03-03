@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="4.1">
+  <axes>
+    <axis tag="wdth" name="Width" minimum="50" maximum="150" default="50"/>
+    <axis tag="wght" name="Weight" minimum="100" maximum="900" default="100">
+      <map input="100" output="1"/>
+      <map input="400" output="440"/>
+      <map input="700" output="760"/>
+      <map input="900" output="1000"/>
+    </axis>
+  </axes>
+  <rules>
+    <rule name="narrow_letters">
+      <conditionset>
+        <condition name="Width" minimum="50" maximum="75"/>
+        <condition name="Weight" minimum="1" maximum="900"/>
+      </conditionset>
+      <sub name="I" with="I.narrow"/>
+      <sub name="J" with="J.narrow"/>
+    </rule>
+    <rule name="closed_s">
+      <conditionset>
+        <condition name="Width" minimum="50" maximum="150"/>
+        <condition name="Weight" minimum="1" maximum="500"/>
+      </conditionset>
+      <sub name="S" with="S.closed"/>
+    </rule>
+  </rules>
+  <sources>
+    <source filename="MutatorSans-CondensedLight.ufo" name="Mutator Sans Condensed Light" familyname="Mutator Sans" stylename="Condensed Light">
+      <lib copy="1"/>
+      <groups copy="1"/>
+      <features copy="1"/>
+      <info copy="1"/>
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="MutatorSans-CondensedLight.ufo" name="Mutator Sans Condensed Light support.crossbar" layer="support.crossbar">
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="760"/>
+      </location>
+    </source>
+    <source filename="MutatorSans-WideLight.ufo" name="Mutator Sans Wide Light" familyname="Mutator Sans" stylename="Wide Light">
+      <location>
+        <dimension name="Width" xvalue="150"/>
+        <dimension name="Weight" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="MutatorSans-CondensedBold.ufo" name="Mutator Sans Condensed Bold" familyname="Mutator Sans" stylename="Condensed Bold">
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="1000"/>
+      </location>
+    </source>
+    <source filename="MutatorSans-WideBold.ufo" name="Mutator Sans Wide Bold" familyname="Mutator Sans" stylename="Wide Bold">
+      <location>
+        <dimension name="Width" xvalue="150"/>
+        <dimension name="Weight" xvalue="1000"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance name="Mutator Sans Condensed Thin" familyname="Mutator Sans" stylename="Condensed Thin" filename="../instance_ufo/MutatorSans-CondensedLight.ufo" stylemapfamilyname="Mutator Sans Condensed Light" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="1"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Condensed Regular" familyname="Mutator Sans" stylename="Condensed Regular" filename="../instance_ufo/MutatorSans-CondensedRegular.ufo" stylemapfamilyname="Mutator Sans Condensed" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="440"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Condensed Bold" familyname="Mutator Sans" stylename="Condensed Bold" filename="../instance_ufo/MutatorSans-CondensedBold.ufo" stylemapfamilyname="Mutator Sans Condensed Bold" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="760"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Condensed Black" familyname="Mutator Sans" stylename="Condensed Black" filename="../instance_ufo/MutatorSans-CondensedBlack.ufo" stylemapfamilyname="Mutator Sans Condensed Black" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="50"/>
+        <dimension name="Weight" xvalue="1000"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Thin" familyname="Mutator Sans" stylename="Thin" filename="../instance_ufo/MutatorSans-Light.ufo" stylemapfamilyname="Mutator Sans Light" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Weight" xvalue="1"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Regular" familyname="Mutator Sans" stylename="Regular" filename="../instance_ufo/MutatorSans-Regular.ufo" stylemapfamilyname="Mutator Sans" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Weight" xvalue="440"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Bold" familyname="Mutator Sans" stylename="Bold" filename="../instance_ufo/MutatorSans-Bold.ufo" stylemapfamilyname="Mutator Sans Bold" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Weight" xvalue="760"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Black" familyname="Mutator Sans" stylename="Black" filename="../instance_ufo/MutatorSans-Black.ufo" stylemapfamilyname="Mutator Sans Black" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Weight" xvalue="1000"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Wide Thin" familyname="Mutator Sans" stylename="Wide Thin" filename="../instance_ufo/MutatorSans-WideLight.ufo" stylemapfamilyname="Mutator Sans Wide Light" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="150"/>
+        <dimension name="Weight" xvalue="1"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Wide Regular" familyname="Mutator Sans" stylename="Wide Regular" filename="../instance_ufo/MutatorSans-WideRegular.ufo" stylemapfamilyname="Mutator Sans Wide" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="150"/>
+        <dimension name="Weight" xvalue="440"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Wide Bold" familyname="Mutator Sans" stylename="Wide Bold" filename="../instance_ufo/MutatorSans-WideBold.ufo" stylemapfamilyname="Mutator Sans Wide Bold" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="150"/>
+        <dimension name="Weight" xvalue="760"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+    <instance name="Mutator Sans Wide Black" familyname="Mutator Sans" stylename="Wide Black" filename="../instance_ufo/MutatorSans-WideBlack.ufo" stylemapfamilyname="Mutator Sans Wide Black" stylemapstylename="regular">
+      <location>
+        <dimension name="Width" xvalue="150"/>
+        <dimension name="Weight" xvalue="1000"/>
+      </location>
+      <kerning/>
+      <info/>
+    </instance>
+  </instances>
+  <lib>
+    <dict>
+      <key>com.letterror.skateboard.interactionSources</key>
+      <dict>
+        <key>horizontal</key>
+        <array/>
+        <key>ignore</key>
+        <array/>
+        <key>vertical</key>
+        <array/>
+      </dict>
+      <key>com.letterror.skateboard.previewLocation</key>
+      <dict>
+        <key>Weight</key>
+        <real>760.0</real>
+        <key>Width</key>
+        <real>50.0</real>
+      </dict>
+      <key>com.letterror.skateboard.previewText</key>
+      <string>SKATE</string>
+    </dict>
+  </lib>
+</designspace>
