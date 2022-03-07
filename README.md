@@ -4,6 +4,8 @@ These examples supplement [Guido Ferreyra](https://tipografia.com.ar)’s talk o
 
 They use [Mutator Sans](https://github.com/LettError/mutatorSans) by [Erik van Blokland](http://letterror.com).
 
+[Salon video recording](https://vimeo.com/685613051) Password: `vftnsalon`
+
 
 ## Mutator UFO
 
