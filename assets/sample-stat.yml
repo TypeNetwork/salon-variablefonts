@@ -1,0 +1,58 @@
+# Change this line with your font file name
+MyFont-Variable.ttf:
+# Describe the different axes contained on your font and the different values/names related to it.
+- name: Optical Sze 
+  tag: opsz
+  values:
+  - name: Text
+    value: 12 
+  - name: Display
+    value: 48
+- name: Weight
+  tag: wght
+  values:
+  - name: Thin
+    value: 100 
+  - name: Light
+    value: 300
+  - name: Regular
+    value: 400
+    linkedValue: 700
+  - name: Bold
+    value: 700
+  - name: Black
+    value: 900
+- name: Italic
+  tag: ital
+  values:
+  - name: Roman
+    value: 0
+    flags: 0x2
+# Repeat and adjust for every other font in the family
+MyFontItalic-Variable.ttf:
+- name: Optical Sze
+  tag: opsz
+  values:
+  - name: Text
+    value: 12 
+  - name: Display
+    value: 48
+- name: Weight
+  tag: wght
+  values:
+  - name: Thin
+    value: 100 
+  - name: Light
+    value: 300
+  - name: Regular
+    value: 400
+    linkedValue: 700
+  - name: Bold
+    value: 700
+  - name: Black
+    value: 900
+- name: Italic
+  tag: ital
+  values:
+  - name: Italic
+    value: 1

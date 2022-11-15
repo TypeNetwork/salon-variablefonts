@@ -148,6 +148,23 @@ Either approach works! DJR finds it less confusing to work with feature variatio
 
 Demo coming soon.
 
-## Statmake
+## STAT table
+At the moment of writing this document, most font editors/building methods can not create complete/correct STAT table for some axes setups. Therefore, STAT table need to be patched after font building.
 
-Demo coming soon.
+There are several methods for patching the STAT table after building but we recommend using gftools gen-stat tool since is the simplest one.
+
+To understand better what is the STAT table and what are the expected values please read more [here](https://learn.microsoft.com/en-us/typography/opentype/spec/stat) and also you can check how the STAT table is made on other fonts to understand how it should be for your font.
+
+### Patching a font with gftools
+
+Pre requisites:
+
+- The compiled font you want to patch (.ttf, .otf)
+- A .yml file with the description of the font axes and axis values (Check sample-stat.yml)
+- Python 3 installed
+
+To patch the fonts open your terminal and follow these steps:
+
+- Install gftools (only the first time):<br>`pip install gftools`
+- Patch the STAT table with:<br>
+`gftools gen-stat path/to/the/font --src path/to/the/yml`
