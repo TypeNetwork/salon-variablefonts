@@ -10,7 +10,7 @@ then
     fontmake -m "MutatorSans.designspace" -i -f -o ttf --no-production-names
 
     echo "Generating Static OTFs"
-    fontmake -g "MutatorSans.designspace" -i  -f -o otf --no-production-names
+    fontmake -m "MutatorSans.designspace" -i  -f -o otf --no-production-names
     
 fi
 
