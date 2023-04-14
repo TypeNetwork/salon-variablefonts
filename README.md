@@ -160,7 +160,7 @@ To understand better what is the STAT table and what are the expected values ple
 Pre requisites:
 
 - The compiled font you want to patch (.ttf, .otf)
-- A .yml file with the description of the font axes and axis values (Check sample-stat.yml)
+- A .yml file with the description of the font axes and axis values (Check [sample-stat.yml](https://github.com/TypeNetwork/salon-variablefonts/blob/main/assets/sample-stat.yml))
 - Python 3 installed
 
 To patch the fonts open your terminal and follow these steps:
